@@ -10,7 +10,7 @@
 		"msgpack-d": "~>1.0.3"
 	},
 	"description": "Search the web from the terminal",
-	"license": "GPLv3",
+	"license": "GPL3",
 	"targetType": "executable",
 	"mainSourceFile": "source/app.d",
 	"name": "search"

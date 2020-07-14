@@ -10,6 +10,16 @@ You can choose to search with either duckduckgo (default) or google with the `--
 
 So far the command is only tested for Linux systems, feel free to contribute/suggest other platforms.
 
+## Install on Arch Linux
+
+There is an [AUR package](https://aur.archlinux.org/packages/search/) that can be installed with:
+
+    $ yay -S search
+
+## Run though dub
+
+    $ dub run search -- my search query | less
+
 ## Usage
 
     $ search my search query
@@ -27,5 +37,3 @@ For more details run:
 Use ldc2 to create a smaller and faster binary.
 
     $ dub build --compiler=ldc2 --build=release
-
-Place the binary file in a PATH directory.
