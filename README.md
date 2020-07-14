@@ -16,7 +16,7 @@ There is an [AUR package](https://aur.archlinux.org/packages/search/) that can b
 
     $ yay -S search
 
-## Run though dub
+## Run through dub
 
     $ dub run search -- my search query | less
 
