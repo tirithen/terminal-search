@@ -1,11 +1,5 @@
 module searchfor.cache;
 
-private string getCacheDirectory() {
-  import std.path : expandTilde;
-
-  return "~/.cache/search".expandTilde;
-}
-
 void cacheClear() {
   const directory = getCacheDirectory();
 
@@ -19,14 +13,13 @@ void cacheClear() {
 
 void cacheWrite(T)(string key, T data) {
   import std.file : write, mkdirRecurse;
-  import std.digest : toHexString;
   import std.conv : to;
   import msgpack : pack;
 
   const directory = getCacheDirectory();
   mkdirRecurse(directory);
 
-  const filename = directory ~ "/" ~ (cast(ubyte[]) key).toHexString;
+  const filename = directory ~ "/" ~ hashKey(key);
   write(filename, pack(data));
 }
 
@@ -41,7 +34,7 @@ Nullable!T cacheRead(T)(string key, Duration maxAge = Duration.max) {
   import msgpack : unpack;
 
   const directory = getCacheDirectory();
-  const filename = directory ~ "/" ~ (cast(ubyte[]) key).toHexString;
+  const filename = directory ~ "/" ~ hashKey(key);
 
   Nullable!T nil;
 
@@ -60,4 +53,17 @@ Nullable!T cacheRead(T)(string key, Duration maxAge = Duration.max) {
   }
 
   return nil;
+}
+
+private string getCacheDirectory() {
+  import std.path : expandTilde;
+
+  return "~/.cache/search".expandTilde;
+}
+
+private string hashKey(string key) {
+  import std.digest.sha : sha256Of;
+  import std.digest : toHexString;
+
+  return sha256Of(key).toHexString.dup;
 }

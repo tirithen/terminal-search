@@ -53,14 +53,6 @@ private void dump(alias variable)() {
 
 string getQuery(string[] argv) {
   import std.array : join;
-  import std.algorithm.searching : startsWith;
 
-  string[] queryParts;
-  foreach (argument; argv[1 .. $]) {
-    if (!argument.startsWith("--")) {
-      queryParts ~= argument;
-    }
-  }
-
-  return join(queryParts, " ");
+  return join(argv[1 .. $], " ");
 }
