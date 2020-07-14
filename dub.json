@@ -11,5 +11,7 @@
 	},
 	"description": "Search the web from the terminal",
 	"license": "GPLv3",
+	"targetType": "executable",
+	"mainSourceFile": "source/app.d",
 	"name": "search"
 }
