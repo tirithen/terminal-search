@@ -1,0 +1,15 @@
+{
+	"authors": [
+		"Fredrik Söderström"
+	],
+	"copyright": "Copyright © 2020, Fredrik Söderström",
+	"dependencies": {
+		"arsd-official:dom": "~>8.2.0",
+		"arsd-official:http": "~>8.2.0",
+		"arsd-official:terminal": "~>8.2.0",
+		"msgpack-d": "~>1.0.3"
+	},
+	"description": "Search the web from the terminal",
+	"license": "GPLv3",
+	"name": "search"
+}

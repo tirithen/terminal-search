@@ -1,0 +1,7 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"arsd-official": "8.2.0",
+		"msgpack-d": "1.0.3"
+	}
+}
