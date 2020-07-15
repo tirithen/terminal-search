@@ -8,7 +8,7 @@ Search the web from the terminal.
 
 You can choose to search with either duckduckgo (default) or google with the `--engine` option.
 
-So far the command is only tested for Linux systems, feel free to contribute/suggest other platforms.
+So far the command is only tested for Linux systems, feel free to contribute/suggest other platforms (and features).
 
 ## Install on Arch Linux
 
@@ -17,6 +17,8 @@ There is an [AUR package](https://aur.archlinux.org/packages/search/) that can b
     $ yay -S search
 
 ## Run through dub
+
+There is a dub package available at https://code.dlang.org/packages/search and it can be ran directly with:
 
     $ dub run search -- my search query | less
 
